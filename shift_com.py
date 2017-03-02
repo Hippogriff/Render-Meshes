@@ -68,10 +68,10 @@ for mesh_path in PATHS:
 
     min_x = min(x_mesh)
     max_x = max(x_mesh)
-    min_y = min(y)
-    max_y = max(y)
-    min_z = min(z)
-    max_z = max(z)
+    min_y = min(y_mesh)
+    max_y = max(y_mesh)
+    min_z = min(z_mesh)
+    max_z = max(z_mesh)
 
     len_x = max_x - min_x
     len_y = max_y - min_y
@@ -92,3 +92,5 @@ for mesh_path in PATHS:
         light.rotation_euler = camera.rotation_euler
         bpy.data.scenes['Scene'].render.filepath = image_path + str(i) + '.png'
         bpy.ops.render.render(write_still=True)
+
+print (time.time() - t1)
